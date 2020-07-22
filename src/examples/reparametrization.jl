@@ -47,9 +47,6 @@ function Reparametrizer{DIM_ALL, DIM_ORIG, DIM_EXTRA}(
     )
 end
 
-Setfield.constructor_of(::Type{<: Reparametrizer{DIM_ALL, DIM_ORIG, DIM_EXTRA}}) where {DIM_ALL, DIM_ORIG, DIM_EXTRA} =
-    Reparametrizer{DIM_ALL, DIM_ORIG, DIM_EXTRA}
-
 @generated function split_x(x::SVector{S, T},
                             rp::Reparametrizer{DIM_ALL, DIM_ORIG, DIM_EXTRA},
                             ) where {S, T, DIM_ALL, DIM_ORIG, DIM_EXTRA}
